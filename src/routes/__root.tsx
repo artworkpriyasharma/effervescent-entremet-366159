@@ -288,7 +288,7 @@ function Footer() {
                 color: '#C09A5B',
               }}
             >
-              Available for Premium Roles
+              Available for Roles that create Impact
             </span>
           </div>
         </div>
@@ -297,7 +297,7 @@ function Footer() {
   )
 }
 function WhatsAppButton() {
-  return (
+  return a> (
     
       href="https://wa.me/917045719408"
       target="_blank"
