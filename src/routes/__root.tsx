@@ -333,10 +333,16 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <Nav />
+
         <main style={{ paddingTop: '68px' }}>
           {children}
         </main>
+
         <Footer />
+
+        {/* Floating WhatsApp Button */}
+        <WhatsAppButton />
+
         <Scripts />
       </body>
     </html>
