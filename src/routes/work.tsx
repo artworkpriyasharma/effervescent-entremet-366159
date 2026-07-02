@@ -122,15 +122,15 @@ export default function Work() {
             Brand work across premium & luxury verticals
           </h1>
           <p
-            style={{
-              fontSize: '1rem',
-              color: 'rgba(248,244,237,0.5)',
-              maxWidth: '580px',
-              lineHeight: 1.75,
-            }}
-          >
-            A selection of consulting engagements spanning fashion, home décor, jewellery, fragrance and D2C — from brand strategy to Shopify ecosystems to AI-enabled marketing operations.
-          </p>
+  style={{
+    fontSize: '1rem',
+    color: 'rgba(248,244,237,0.5)',
+    maxWidth: '580px',
+    lineHeight: 1.75,
+  }}
+>
+  11+ years of consulting and full-time engagements across fashion, luxury home décor, jewellery, fragrance, hospitality, kids' wear and organic cosmetics — spanning brand strategy, Shopify ecosystems, campaign leadership, creative direction and AI-enabled marketing operations for both Indian and international brands.
+       </p>
         </div>
       </section>
 
