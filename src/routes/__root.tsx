@@ -275,7 +275,7 @@ function Footer() {
           }}
         >
           <p style={{ fontSize: '0.75rem', color: 'rgba(248,244,237,0.35)' }}>
-            © 2025 Disha Soni. All rights reserved.
+            © 2026 Disha Soni. All rights reserved.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <span className="availability-dot" />
@@ -296,7 +296,42 @@ function Footer() {
     </footer>
   )
 }
-
+function WhatsAppButton() {
+  return (
+    
+      href="https://wa.me/917045719408"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        position: 'fixed',
+        bottom: '2rem',
+        right: '2rem',
+        width: '56px',
+        height: '56px',
+        borderRadius: '50%',
+        background: '#25D366',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 4px 16px rgba(0,0,0,0.25)',
+        zIndex: 999,
+        transition: 'transform 0.2s ease',
+      }}
+      onMouseEnter={(e) => {
+        ;(e.currentTarget as HTMLElement).style.transform = 'scale(1.08)'
+      }}
+      onMouseLeave={(e) => {
+        ;(e.currentTarget as HTMLElement).style.transform = 'scale(1)'
+      }}
+      aria-label="Chat on WhatsApp"
+    >
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 4.99L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 2c2.19 0 4.24.85 5.79 2.4a8.13 8.13 0 0 1 2.39 5.79c0 4.51-3.67 8.18-8.18 8.18-1.44 0-2.85-.38-4.09-1.09l-.29-.17-3.05.8.82-2.97-.19-.31a8.13 8.13 0 0 1-1.24-4.34C3.99 7.67 7.66 4 12.13 4h-.09z"/>
+        <path d="M9.5 6.5c-.21 0-.55.08-.84.39-.29.31-1.1 1.08-1.1 2.62 0 1.54 1.13 3.03 1.29 3.24.16.21 2.19 3.5 5.42 4.77 2.68 1.05 3.22.84 3.8.79.58-.05 1.87-.76 2.13-1.5.26-.74.26-1.37.18-1.5-.08-.13-.29-.21-.6-.37-.32-.16-1.87-.92-2.16-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.19.21-.37.24-.68.08-.32-.16-1.34-.49-2.55-1.57-.94-.84-1.58-1.87-1.76-2.19-.19-.32-.02-.49.14-.65.14-.14.32-.37.47-.55.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.55-.08-.16-.71-1.73-.98-2.36-.26-.62-.52-.54-.71-.55h-.6z"/>
+      </svg>
+    </a>
+  )
+}
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
