@@ -11,7 +11,7 @@ const experience = [
   period: 'Aug 2022 – Present',
   type: 'Consulting',
   highlights: [
-    'Managed Shopify ecosystem with 50,000+ SKUs for Zest Mélange, supporting a platform receiving approximately 500,000–700,000 visitors daily, with full merchandising, seasonal campaigns and website optimisation',
+    'Managed Shopify ecosystem for Zest Mélange, supporting a platform receiving 50,000 visitors daily, with full merchandising, seasonal campaigns and website optimisation',
     'Developed social media campaigns, outdoor branding and corporate communication for Zest Corporation, the parent jewellery brand',
     'Owned annual marketing calendar, integrated campaigns, exhibitions, partnerships and PR coordination for Baaya Design on a retainer basis',
     'Led event branding, product photography coordination and premium catalogue development for Ancora Design (USA)',
