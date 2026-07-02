@@ -25,7 +25,7 @@ const featuredWork = [
     result: 'Owned the complete marketing calendar and brand direction for a premium home décor brand over 4+ years.',
   },
   {
-    brand: 'ARMAF',
+    brand: 'Armaf',
     category: 'International Fragrance',
     service: 'Campaign Strategy · Product Storytelling · Launch',
     result: 'Led campaign strategy and creative concepts for premium fragrance launches with focus on international, elevated brand positioning.',
