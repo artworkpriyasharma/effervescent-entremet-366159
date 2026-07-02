@@ -214,15 +214,15 @@ export default function Resume() {
                 }}
               >
                 <ul style={{ listStyle: 'none', padding: 0 }}>
-                  {[
-                    '11+ years of progressive experience across Brand, Digital Commerce & Marketing for premium and luxury D2C brands',
-                    ''Managed Shopify ecosystem with 50,000+ SKUs, supporting a platform receiving approximately 500,000–700,000 visitors daily',
-'Owned the planning and execution of seasonal integrated marketing campaigns from strategic concept through launch'
-                    'Worked directly with founders and cross-functional teams (design, development, PR) to shape brand direction',
-                    'Led creative conceptualisation for video and static campaigns across fashion, jewellery and fragrance categories',
-                    'Led a full brand identity repositioning for a patisserie brand, shifting tone of voice to a quirky, lively brand expression',
-                    'Brought AI-powered workflows into day-to-day operations — improving turnaround time on creative and content cycles',
-                  ].map((item) => (
+  {[
+    '11+ years of progressive experience across Brand, Digital Commerce & Marketing for premium and luxury D2C brands',
+    'Managed Shopify ecosystem with 50,000+ SKUs, supporting a platform receiving approximately 500,000–700,000 visitors daily',
+    'Owned the planning and execution of seasonal integrated marketing campaigns from strategic concept through launch',
+    'Worked directly with founders and cross-functional teams (design, development, PR) to shape brand direction',
+    'Led creative conceptualisation for video and static campaigns across fashion, jewellery and fragrance categories',
+    'Led a full brand identity repositioning for a patisserie brand, shifting tone of voice to a quirky, lively brand expression',
+    'Brought AI-powered workflows into day-to-day operations — improving turnaround time on creative and content cycles',
+  ].map((item) => (
                     <li
                       key={item}
                       style={{
