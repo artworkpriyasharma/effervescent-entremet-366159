@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 export const Route = createFileRoute('/work')({
   component: Work,
@@ -96,8 +96,76 @@ const caseStudies = [
 ]
 
 const mediaGallery = {
-  videos: [] as { title: string; src: string; thumbnail: string; brand: string }[],
+  videos: [
+    {
+      title: 'Mriganka — First Light',
+      brand: 'Campaign Film',
+      src: '/videos/mriganka-first-light.mp4',
+      thumbnail: '',
+    },
+  ] as { title: string; src: string; thumbnail: string; brand: string }[],
   statics: [] as { title: string; src: string; brand: string; type: string }[],
+}
+
+function VideoCard({ video }: { video: { title: string; src: string; thumbnail: string; brand: string } }) {
+  const ref = useRef<HTMLVideoElement>(null)
+  const [playing, setPlaying] = useState(false)
+
+  const toggle = () => {
+    const el = ref.current
+    if (!el) return
+    if (el.paused) el.play()
+    else el.pause()
+  }
+
+  return (
+    <div
+      className="media-card"
+      style={{ aspectRatio: '16/9', cursor: 'pointer' }}
+      onClick={toggle}
+    >
+      <video
+        ref={ref}
+        src={video.src}
+        poster={video.thumbnail || undefined}
+        playsInline
+        controls={playing}
+        preload="metadata"
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+      />
+      {!playing && (
+        <>
+          <div className="media-overlay">
+            <div className="play-btn">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M6 4L16 10L6 16V4Z" fill="#18181A" />
+              </svg>
+            </div>
+          </div>
+          <div
+            style={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              right: 0,
+              padding: '1.5rem 1.25rem 1rem',
+              background: 'linear-gradient(to top, rgba(24,24,26,0.9), transparent)',
+              pointerEvents: 'none',
+            }}
+          >
+            <p style={{ fontSize: '0.625rem', color: '#C09A5B', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>
+              {video.brand}
+            </p>
+            <p style={{ fontSize: '0.875rem', color: '#F8F4ED', fontWeight: 500 }}>
+              {video.title}
+            </p>
+          </div>
+        </>
+      )}
+    </div>
+  )
 }
 
 export default function Work() {
@@ -427,37 +495,7 @@ export default function Work() {
                 }}
               >
                 {mediaGallery.videos.map((video) => (
-                  <div key={video.title} className="media-card" style={{ aspectRatio: '16/9' }}>
-                    <video
-                      src={video.src}
-                      poster={video.thumbnail}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                    <div className="media-overlay">
-                      <div className="play-btn">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                          <path d="M6 4L16 10L6 16V4Z" fill="#18181A" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      style={{
-                        position: 'absolute',
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        padding: '1.5rem 1.25rem 1rem',
-                        background: 'linear-gradient(to top, rgba(24,24,26,0.9), transparent)',
-                      }}
-                    >
-                      <p style={{ fontSize: '0.625rem', color: '#C09A5B', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>
-                        {video.brand}
-                      </p>
-                      <p style={{ fontSize: '0.875rem', color: '#F8F4ED', fontWeight: 500 }}>
-                        {video.title}
-                      </p>
-                    </div>
-                  </div>
+                  <VideoCard key={video.title} video={video} />
                 ))}
               </div>
             ) : (
