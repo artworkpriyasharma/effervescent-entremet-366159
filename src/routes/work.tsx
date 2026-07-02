@@ -121,7 +121,7 @@ function VideoCard({ video }: { video: { title: string; src: string; thumbnail: 
   return (
     <div
       className="media-card"
-      style={{ aspectRatio: '16/9', cursor: 'pointer' }}
+      style={{ aspectRatio: '9/16', cursor: 'pointer' }}
       onClick={toggle}
     >
       <video
@@ -489,10 +489,11 @@ export default function Work() {
               <div
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: 'repeat(3, 1fr)',
+                  gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
                   gap: '1.5px',
                   background: '#2C2C2E',
                 }}
+                className="video-grid"
               >
                 {mediaGallery.videos.map((video) => (
                   <VideoCard key={video.title} video={video} />
@@ -560,7 +561,7 @@ export default function Work() {
               <div
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: 'repeat(4, 1fr)',
+                  gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
                   gap: '1.5px',
                   background: '#2C2C2E',
                 }}
@@ -570,7 +571,7 @@ export default function Work() {
                   <div
                     key={item.title}
                     className="media-card"
-                    style={{ aspectRatio: '1/1' }}
+                    style={{ aspectRatio: '3/4' }}
                   >
                     <img
                       src={item.src}
@@ -681,6 +682,7 @@ export default function Work() {
         @media (max-width: 767px) {
           .detail-grid { grid-template-columns: 1fr !important; }
           .static-grid { grid-template-columns: repeat(2,1fr) !important; }
+          .video-grid { grid-template-columns: repeat(2,1fr) !important; }
         }
       `}</style>
     </div>
