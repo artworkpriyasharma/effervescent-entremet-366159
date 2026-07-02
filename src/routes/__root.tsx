@@ -298,7 +298,7 @@ function Footer() {
 }
 function WhatsAppButton() {
   return (
-    
+    <a
       href="https://wa.me/917045719408"
       target="_blank"
       rel="noopener noreferrer"
