@@ -16,7 +16,7 @@ const featuredWork = [
     brand: 'Zest Mélange',
     category: 'Fashion · Lifestyle',
     service: 'Shopify Ecosystem · Campaign Leadership · SEO',
-    result: 'Managed a 500+ SKU Shopify store supporting ~50K monthly visitors with full merchandising and seasonal campaign execution.',
+    result: 'Managed a 50,000+ SKU Shopify store supporting up to 700K daily visitors with full merchandising and seasonal campaign execution.',
   },
   {
     brand: 'Baaya Design',
@@ -25,16 +25,16 @@ const featuredWork = [
     result: 'Owned the complete marketing calendar and brand direction for a premium home décor brand over 4+ years.',
   },
   {
+    brand: 'ARMAF',
+    category: 'International Fragrance',
+    service: 'Campaign Strategy · Product Storytelling · Launch',
+    result: 'Led campaign strategy and creative concepts for premium fragrance launches with focus on international, elevated brand positioning.',
+  },
+  {
     brand: 'Saturday Club',
     category: 'F&B · Patisserie',
     service: 'Brand Identity · Repositioning · Tone of Voice',
     result: 'Led a full brand reposition — shifting visual identity, messaging, and customer experience to a distinct, lively expression.',
-  },
-  {
-    brand: 'Almav',
-    category: 'Luxury Fragrance',
-    service: 'Campaign Strategy · Product Storytelling · Launch',
-    result: 'Developed campaign strategy and creative concepts for premium fragrance launches with focus on elevated brand positioning.',
   },
 ]
 
@@ -483,10 +483,11 @@ export default function Home() {
             }}
           >
             {[
-              'Fashion', 'Responsible Fashion', 'Luxury Home Décor',
-              'Jewellery', 'Fragrance', 'F&B / Patisserie',
-              'Lifestyle', 'D2C Commerce', 'Advertising',
-            ].map((industry) => (
+  'Fashion', 'Responsible Fashion', 'Luxury Home Décor',
+  'Jewellery', 'Beauty', 'Organic Cosmetics', 'Hospitality',
+  "Kids' Wear", 'Fragrance', 'F&B / Patisserie',
+  'Lifestyle', 'D2C Commerce', 'Advertising',
+].map((industry) => (
               <span
                 key={industry}
                 style={{
@@ -571,8 +572,9 @@ export default function Home() {
                 { label: 'Visa Status', value: 'Employment Visa Required' },
                 { label: 'Languages', value: 'English · Hindi · Marathi' },
                 { label: 'Location', value: 'Mumbai → Dubai' },
-                { label: 'Current Role', value: 'Independent Consultant' },
-                { label: 'Availability', value: 'Immediately' },
+               { label: 'Current Role', value: 'Independent Consultant' },
+{ label: 'Phone', value: '+91-7045719408' },
+{ label: 'Availability', value: '45 Days' },
               ].map((item) => (
                 <div key={item.label} style={{ background: '#F8F4ED', padding: '1.5rem' }}>
                   <p
