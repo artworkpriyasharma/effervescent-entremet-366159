@@ -6,9 +6,9 @@ export const Route = createFileRoute('/')({
 
 const highlights = [
   { number: '11+', label: 'Years of Experience', sub: 'Brand & Digital Commerce' },
-  { number: '500+', label: 'SKUs Managed', sub: 'Shopify Ecosystems' },
-  { number: '50K', label: 'Monthly Visitors', sub: 'Avg. Platform Traffic' },
-  { number: '3+', label: 'Campaigns / Year', sub: 'End-to-End Delivery' },
+  { number: '50K+', label: 'SKUs Managed', sub: 'Shopify Ecosystems' },
+  { number: '700K', label: 'Daily Visitors', sub: 'Peak Platform Traffic' },
+  { number: 'Multiple Seasonal', label: 'Brand Engagements', sub: 'Consulting & Full-Time' },
 ]
 
 const featuredWork = [
@@ -135,19 +135,15 @@ export default function Home() {
           />
 
           <p
-            className="anim-fade-up anim-delay-3"
-            style={{
-              maxWidth: '580px',
-              fontSize: 'clamp(1rem, 1.8vw, 1.1875rem)',
-              color: 'rgba(248,244,237,0.65)',
-              lineHeight: 1.75,
-              marginBottom: '3rem',
-            }}
-          >
-            11+ years partnering with founders and leadership teams to build
-            premium consumer brands across fashion, jewellery, luxury home
-            décor, fragrance and D2C commerce. Dubai-ready.
-          </p>
+  className="anim-fade-up anim-delay-3"
+  ...
+>
+  11+ years partnering with founders and leadership teams to build
+  premium consumer brands across fashion, jewellery, luxury home
+  décor, beauty, hospitality, kids' wear, organic cosmetics, fragrance
+  and D2C commerce — with AI-enabled marketing operations woven into
+  every engagement. Dubai-ready.
+</p>
 
           <div
             className="anim-fade-up anim-delay-4"
