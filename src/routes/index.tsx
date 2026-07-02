@@ -136,7 +136,13 @@ export default function Home() {
 
           <p
   className="anim-fade-up anim-delay-3"
-  ...
+  style={{
+    maxWidth: '580px',
+    fontSize: 'clamp(1rem, 1.8vw, 1.1875rem)',
+    color: 'rgba(248,244,237,0.65)',
+    lineHeight: 1.75,
+    marginBottom: '3rem',
+  }}
 >
   11+ years partnering with founders and leadership teams to build
   premium consumer brands across fashion, jewellery, luxury home
