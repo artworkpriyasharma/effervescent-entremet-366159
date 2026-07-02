@@ -298,7 +298,7 @@ function Footer() {
 }
 function WhatsAppButton() {
   return (
-    a>
+    
       href="https://wa.me/917045719408"
       target="_blank"
       rel="noopener noreferrer"
@@ -315,13 +315,6 @@ function WhatsAppButton() {
         justifyContent: 'center',
         boxShadow: '0 4px 16px rgba(0,0,0,0.25)',
         zIndex: 999,
-        transition: 'transform 0.2s ease',
-      }}
-      onMouseEnter={(e) => {
-        ;(e.currentTarget as HTMLElement).style.transform = 'scale(1.08)'
-      }}
-      onMouseLeave={(e) => {
-        ;(e.currentTarget as HTMLElement).style.transform = 'scale(1)'
       }}
       aria-label="Chat on WhatsApp"
     >
