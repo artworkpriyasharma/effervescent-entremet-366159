@@ -13,7 +13,7 @@ const caseStudies = [
     services: ['Shopify Ecosystem', 'Merchandising', 'Campaign Leadership', 'SEO', 'Website Optimisation'],
     period: 'Aug 2022 – Present',
     overview:
-      'Full ownership of a large-scale S2hopify ecosystem supporting a fashion and lifestyle D2C brand, managing 500+ SKUs and driving ~50,000 monthly visitors through strategic merchandising, SEO, and seasonal campaign execution.',
+      'Full ownership of a large-scale S2hopify ecosystem supporting a fashion and lifestyle D2C brand, managing SKUs and drivingvisitors through strategic merchandising, SEO, and seasonal campaign execution.',
     deliverables: [
       'End-to-end Shopify ecosystem management with 500+ SKUs',
       'Seasonal campaign planning and execution (3+ per year)',
@@ -166,21 +166,6 @@ const caseStudies = [
       'Improved conversion-focused on-site communication',
     ],
     tags: ['Organic Cosmetics', 'UX', 'Conversion'],
-  },
-  {
-    id: 'armaf',
-    brand: 'ARMAF',
-    category: 'International Fragrance',
-    services: ['Campaign Strategy', 'Creative Concepts', 'Product Storytelling', 'Launch Positioning'],
-    period: '2022 – Present',
-    overview:
-      'Campaign strategy, creative concepts and product storytelling for fragrance launches by an international fragrance brand, with a focus on premium positioning.',
-    deliverables: [
-      'Led campaign strategy for fragrance launches',
-      'Developed creative concepts and launch communication',
-      'Focused on premium positioning in product storytelling',
-    ],
-    tags: ['Fragrance', 'International', 'Launch'],
   },
 ]
 
