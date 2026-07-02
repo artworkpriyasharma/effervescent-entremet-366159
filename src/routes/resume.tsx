@@ -11,14 +11,14 @@ const experience = [
     period: 'Aug 2022 – Present',
     type: 'Consulting',
     highlights: [
-      'Managed Shopify ecosystem with 500+ SKUs for Zest Mélange, supporting ~50K monthly visitors with full merchandising, seasonal campaigns and website optimisation',
+      'Managed Shopify ecosystem for Zest Mélange,supporting ~1L monthly visitors with full merchandising, seasonal campaigns and website optimisation',
       'Owned annual marketing calendar, integrated campaigns, exhibitions, partnerships and PR coordination for Baaya Design on a retainer basis',
-      'Led campaign strategy, creative direction and product storytelling for Almav fragrance launches — focus on premium D2C positioning',
+      'Led campaign strategy, creative direction and product storytelling for Armaf fragrance launches — focus on premium D2C positioning',
       'Delivered full brand repositioning for Saturday Club patisserie — new tone of voice, visual identity and customer-facing brand expression',
       'Developed campaign strategy, launch communication and AI-assisted marketing workflows for confidential luxury fragrance brands (NDA)',
       'Brought AI-powered tools (ChatGPT, Claude, Perplexity, Gamma) into day-to-day workflows for research, copywriting, and competitive intelligence',
     ],
-    brands: ['Zest Mélange', 'Baaya Design', 'Almav', 'Saturday Club', 'Luxury Fragrance (NDA)'],
+    brands: ['Zest Mélange', 'Baaya Design', 'Armaf', 'Saturday Club', 'Luxury Fragrance (NDA)'],
   },
   {
     title: 'Marketing Manager',
