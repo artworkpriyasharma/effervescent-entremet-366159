@@ -40,7 +40,7 @@ const caseStudies = [
       'Website communication and editorial content direction',
       'Founder collaboration on strategic brand decisions',
     ],
-    tags: ['Luxury', 'Home Décor', 'Brand Strategy', 'PR'],
+    tags: ['', 'Home Décor', 'Brand Strategy', 'PR'],
   },
   {
     id: 'almav',
@@ -92,6 +92,95 @@ const caseStudies = [
       'Competitive intelligence and market research',
     ],
     tags: ['Luxury', 'Fragrance', 'NDA', 'AI Marketing'],
+  },
+
+  {
+    id: 'zest-corporation',
+    brand: 'Zest Corporation',
+    category: 'Jewellery',
+    services: ['Social Media Campaigns', 'Outdoor Branding', 'Event Standees', 'Corporate Communication'],
+    period: '2022 – Present',
+    overview:
+      'Social media campaigns, outdoor branding and corporate communication for the parent jewellery brand behind Zest Mélange, supporting brand visibility across offline and digital touchpoints.',
+    deliverables: [
+      'Social media campaign planning and execution',
+      'Outdoor branding and event standee design direction',
+      'Corporate communication and brand messaging',
+    ],
+    tags: ['Jewellery', 'Branding', 'Corporate'],
+  },
+  {
+    id: 'ancora-design',
+    brand: 'Ancora Design (USA)',
+    category: 'Luxury Home Décor',
+    services: ['Event Branding', 'Product Photography', 'Catalogue Design'],
+    period: '2022 – Present',
+    overview:
+      'Event branding, product photography coordination and premium catalogue development for a US-based luxury home décor brand.',
+    deliverables: [
+      'Event branding and on-site brand presence',
+      'Coordination of product photography shoots',
+      'Development of premium product catalogues',
+    ],
+    tags: ['Luxury', 'Home Décor', 'USA', 'Events'],
+  },
+  {
+    id: 'a-toddler-thing',
+    brand: 'A Toddler Thing',
+    category: "Kids' Wear",
+    services: ['Campaign Conceptualisation', 'Advertising Communication', 'Brand Storytelling'],
+    period: '2022 – Present',
+    overview:
+      "Founder-led campaign conceptualisation and brand storytelling for a kids' wear D2C brand, shaping advertising communication across channels.",
+    deliverables: [
+      'Conceptualised founder-led campaigns',
+      'Managed advertising communication strategy',
+      "Developed brand storytelling for the kids' wear category",
+    ],
+    tags: ["Kids' Wear", 'D2C', 'Storytelling'],
+  },
+  {
+    id: 'saffron-stays',
+    brand: 'Saffron Stays',
+    category: 'Hospitality',
+    services: ['Advertising Communication', 'Campaign Messaging'],
+    period: '2022 – Present',
+    overview:
+      'Advertising communication and campaign messaging support for a boutique hospitality and villa-stays brand.',
+    deliverables: [
+      'Managed advertising communication',
+      'Developed campaign messaging frameworks',
+    ],
+    tags: ['Hospitality', 'Campaign'],
+  },
+  {
+    id: 'azafran',
+    brand: 'Azafran',
+    category: 'Organic Cosmetics',
+    services: ['Website UX', 'Navigation Optimisation', 'Conversion Copy'],
+    period: '2022 – Present',
+    overview:
+      'Website experience optimisation for an organic cosmetics brand, improving navigation, usability and conversion-focused communication.',
+    deliverables: [
+      'Optimised website user experience and navigation',
+      'Improved conversion-focused on-site communication',
+    ],
+    tags: ['Organic Cosmetics', 'UX', 'Conversion'],
+  },
+  {
+    id: 'armaf',
+    brand: 'ARMAF',
+    category: 'International Fragrance',
+    services: ['Campaign Strategy', 'Creative Concepts', 'Product Storytelling', 'Launch Positioning'],
+    period: '2022 – Present',
+    overview:
+      'Campaign strategy, creative concepts and product storytelling for fragrance launches by an international fragrance brand, with a focus on premium positioning.',
+    deliverables: [
+      'Led campaign strategy for fragrance launches',
+      'Developed creative concepts and launch communication',
+      'Focused on premium positioning in product storytelling',
+    ],
+    tags: ['Fragrance', 'International', 'Launch'],
   },
 ]
 
@@ -419,15 +508,16 @@ export default function Work() {
 
             {mediaGallery.videos.length > 0 ? (
               <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(3, 1fr)',
-                  gap: '1.5px',
-                  background: '#2C2C2E',
-                }}
-              >
-                {mediaGallery.videos.map((video) => (
-                  <div key={video.title} className="media-card" style={{ aspectRatio: '16/9' }}>
+  style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(4, 1fr)',
+    gap: '1.5px',
+    background: '#2C2C2E',
+  }}
+  className="video-grid"
+>
+  {mediaGallery.videos.map((video) => (
+    <div key={video.title} className="media-card" style={{ aspectRatio: '9/16' }}>
                     <video
                       src={video.src}
                       poster={video.thumbnail}
@@ -637,14 +727,16 @@ export default function Work() {
       </section>
 
       <style>{`
-        @media (max-width: 1023px) {
-          .case-grid { grid-template-columns: 1fr !important; }
-        }
-        @media (max-width: 767px) {
-          .detail-grid { grid-template-columns: 1fr !important; }
-          .static-grid { grid-template-columns: repeat(2,1fr) !important; }
-        }
-      `}</style>
+  @media (max-width: 1023px) {
+    .case-grid { grid-template-columns: 1fr !important; }
+    .video-grid { grid-template-columns: repeat(3,1fr) !important; }
+  }
+  @media (max-width: 767px) {
+    .detail-grid { grid-template-columns: 1fr !important; }
+    .static-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .video-grid { grid-template-columns: repeat(2,1fr) !important; }
+  }
+`}</style>
     </div>
   )
 }
