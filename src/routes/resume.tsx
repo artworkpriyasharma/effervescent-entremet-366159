@@ -6,20 +6,25 @@ export const Route = createFileRoute('/resume')({
 
 const experience = [
   {
-    title: 'Brand Growth & Digital Commerce Consultant',
-    company: 'Independent Practice',
-    period: 'Aug 2022 – Present',
-    type: 'Consulting',
-    highlights: [
-      'Managed Shopify ecosystem for Zest Mélange,supporting ~1L monthly visitors with full merchandising, seasonal campaigns and website optimisation',
-      'Owned annual marketing calendar, integrated campaigns, exhibitions, partnerships and PR coordination for Baaya Design on a retainer basis',
-      'Led campaign strategy, creative direction and product storytelling for Armaf fragrance launches — focus on premium D2C positioning',
-      'Delivered full brand repositioning for Saturday Club patisserie — new tone of voice, visual identity and customer-facing brand expression',
-      'Developed campaign strategy, launch communication and AI-assisted marketing workflows for confidential luxury fragrance brands (NDA)',
-      'Brought AI-powered tools (ChatGPT, Claude, Perplexity, Gamma) into day-to-day workflows for research, copywriting, and competitive intelligence',
-    ],
-    brands: ['Zest Mélange', 'Baaya Design', 'Armaf', 'Saturday Club', 'Luxury Fragrance (NDA)'],
-  },
+  title: 'Brand Growth & Digital Commerce Consultant',
+  company: 'Independent Practice',
+  period: 'Aug 2022 – Present',
+  type: 'Consulting',
+  highlights: [
+    'Managed Shopify ecosystem with 50,000+ SKUs for Zest Mélange, supporting a platform receiving approximately 500,000–700,000 visitors daily, with full merchandising, seasonal campaigns and website optimisation',
+    'Developed social media campaigns, outdoor branding and corporate communication for Zest Corporation, the parent jewellery brand',
+    'Owned annual marketing calendar, integrated campaigns, exhibitions, partnerships and PR coordination for Baaya Design on a retainer basis',
+    'Led event branding, product photography coordination and premium catalogue development for Ancora Design (USA)',
+    "Conceptualised founder-led campaigns and brand storytelling for A Toddler Thing, a kids' wear brand",
+    'Managed advertising communication and campaign messaging for Saffron Stays',
+    'Optimised the Azafran organic cosmetics website for user experience, navigation and conversion',
+    'Led campaign strategy, creative direction and product storytelling for ARMAF, an international fragrance brand — focus on premium positioning',
+    'Delivered full brand repositioning for Saturday Club patisserie — new tone of voice, visual identity and customer-facing brand expression',
+    'Developed campaign strategy, launch communication and AI-assisted marketing workflows for confidential luxury fragrance brands (NDA)',
+    'Brought AI-powered tools (ChatGPT, Claude, Perplexity, Gamma) into day-to-day workflows for research, copywriting, and competitive intelligence',
+  ],
+  brands: ['Zest Mélange', 'Zest Corporation', 'Baaya Design', 'Ancora Design', "A Toddler Thing", 'Saffron Stays', 'Azafran', 'ARMAF', 'Saturday Club', 'Luxury Fragrance (NDA)'],
+},
   {
     title: 'Marketing Manager',
     company: 'Baaya Design',
@@ -130,8 +135,9 @@ export default function Resume() {
 
           <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' as const }}>
             {[
-              { label: 'Email', value: 'work.dishasoni@gmail.com' },
-              { label: 'Location', value: 'Mumbai → Dubai, UAE' },
+           { label: 'Email', value: 'work.dishasoni@gmail.com' },
+{ label: 'Phone', value: '+91-7045719408' },
+{ label: 'Location', value: 'Mumbai → Dubai, UAE' },
               { label: 'Visa', value: 'Employment Visa Required' },
               { label: 'Languages', value: 'English · Hindi · Marathi' },
             ].map((item) => (
@@ -210,8 +216,8 @@ export default function Resume() {
                 <ul style={{ listStyle: 'none', padding: 0 }}>
                   {[
                     '11+ years of progressive experience across Brand, Digital Commerce & Marketing for premium and luxury D2C brands',
-                    'Managed Shopify ecosystem with 500+ SKUs, supporting websites averaging ~50,000 monthly visitors',
-                    'Planned and executed 3+ seasonal campaigns annually, end-to-end from concept to launch',
+                    ''Managed Shopify ecosystem with 50,000+ SKUs, supporting a platform receiving approximately 500,000–700,000 visitors daily',
+'Owned the planning and execution of seasonal integrated marketing campaigns from strategic concept through launch'
                     'Worked directly with founders and cross-functional teams (design, development, PR) to shape brand direction',
                     'Led creative conceptualisation for video and static campaigns across fashion, jewellery and fragrance categories',
                     'Led a full brand identity repositioning for a patisserie brand, shifting tone of voice to a quirky, lively brand expression',
