@@ -567,7 +567,7 @@ export default function Resume() {
               >
                 Open to senior roles in Dubai, UAE
               </p>
-              <Link to="/contact" ="btn-dark" style={{ width: '100%', justifyContent: 'center' }}>
+             <Link to="/contact" className="btn-dark" style={{ width: '100%', justifyContent: 'center' }}>
                 Get in Touch
               </Link>
             </div>
