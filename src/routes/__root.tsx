@@ -277,7 +277,7 @@ function Footer() {
           <p style={{ fontSize: '0.75rem', color: 'rgba(248,244,237,0.35)' }}>
             © 2026 Disha Soni. All rights reserved.
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginRight: '4.5rem' }}>
             <span className="availability-dot" />
             <span
               style={{
