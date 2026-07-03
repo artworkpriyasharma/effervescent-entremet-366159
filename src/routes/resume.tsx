@@ -114,9 +114,10 @@ export default function Resume() {
 
           <div style={{ display: 'flex', gap: '1rem', marginBottom: '2.5rem' }}>
             <a
-              href="/Disha_Soni_Resume.docx"
-              download
-              className="btn-dark"
+              href="/Disha_Soni_Resume.pdf"
+  download
+  className="btn-dark"
+>
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
