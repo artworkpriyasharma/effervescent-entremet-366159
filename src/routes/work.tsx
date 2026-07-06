@@ -169,7 +169,44 @@ const caseStudies = [
   },
 ]
 
+// Client wordmarks — pulled from real engagements above.
+// Add more brand names here as needed (10–15 recommended).
+const clientLogos = [
+  'Zest Mélange',
+  'Baaya Design',
+  'Armaf',
+  'Saturday Club',
+  'Zest Corporation',
+  'Ancora Design',
+  'A Toddler Thing',
+  'Saffron Stays',
+  'Azafran',
+]
+
+const services = [
+  { area: 'Brand Strategy', items: ['Brand Positioning', 'Go-to-Market', 'Storytelling', 'Campaign Strategy'] },
+  { area: 'Digital Commerce', items: ['Shopify Ecosystems', 'Shopify SEO', 'Google Merchant Center', 'Customer Journey'] },
+  { area: 'AI & Operations', items: ['ChatGPT · Claude · Gemini', 'AI-Powered Workflows', 'Canva AI · Gamma', 'Content Automation'] },
+  { area: 'Leadership', items: ['Founder Collaboration', 'Cross-functional Teams', 'Marketing Calendar', 'Stakeholder Management'] },
+]
+
+// TESTIMONIAL PLACEHOLDERS — replace quote/name/role with real client testimonials.
+const testimonials = [
+  { quote: 'Add a testimonial quote here from a client or colleague describing the impact of your work.', name: 'Client Name', role: 'Role · Brand' },
+  { quote: 'Add a testimonial quote here from a client or colleague describing the impact of your work.', name: 'Client Name', role: 'Role · Brand' },
+  { quote: 'Add a testimonial quote here from a client or colleague describing the impact of your work.', name: 'Client Name', role: 'Role · Brand' },
+]
+
+const highlights = [
+  { number: '11+', label: 'Years of Experience', sub: 'Brand & Digital Commerce' },
+  { number: '50K+', label: 'SKUs Managed', sub: 'Shopify Ecosystems' },
+  { number: '700K', label: 'Daily Visitors', sub: 'Peak Platform Traffic' },
+  { number: 'Multiple Seasonal', label: 'Brand Engagements', sub: 'Consulting & Full-Time' },
+]
+
 const mediaGallery = {
+  // Static images: square (1:1). Videos: vertical (9:16). Aim for ~20 assets total
+  // (5–6 statics, remaining as videos) once you upload real files.
   videos: [] as { title: string; src: string; thumbnail: string; brand: string }[],
   statics: [] as { title: string; src: string; brand: string; type: string }[],
 }
@@ -444,6 +481,55 @@ export default function Work() {
         </div>
       </section>
 
+      {/* ── Client Logos ─────────────────────────────────── */}
+      <section
+        style={{
+          padding: '3.5rem 2rem',
+          background: '#F0EBE0',
+          borderTop: '1px solid #E0DBD2',
+          borderBottom: '1px solid #E0DBD2',
+        }}
+      >
+        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+          <p
+            style={{
+              fontSize: '0.625rem',
+              fontWeight: 700,
+              letterSpacing: '0.14em',
+              textTransform: 'uppercase',
+              color: '#A09A92',
+              textAlign: 'center' as const,
+              marginBottom: '2rem',
+            }}
+          >
+            Brands I've Worked With
+          </p>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap' as const,
+              justifyContent: 'center',
+              gap: '2.5rem 3.5rem',
+            }}
+          >
+            {clientLogos.map((name) => (
+              <span
+                key={name}
+                className="font-display"
+                style={{
+                  fontSize: '1.25rem',
+                  color: '#7C776F',
+                  opacity: 0.75,
+                  letterSpacing: '0.02em',
+                }}
+              >
+                {name}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Campaign Media ──────────────────────────────── */}
       <section
         style={{
@@ -680,6 +766,141 @@ export default function Work() {
         </div>
       </section>
 
+      {/* ── Services ──────────────────────────────────────── */}
+      <section style={{ padding: '6rem 2rem', background: '#F8F4ED' }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+          <p className="eyebrow" style={{ marginBottom: '0.75rem', textAlign: 'center' as const }}>
+            Services
+          </p>
+          <h2
+            className="display-md font-display"
+            style={{ color: '#18181A', textAlign: 'center' as const, marginBottom: '3.5rem' }}
+          >
+            What I Do
+          </h2>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              gap: '1.5px',
+              background: '#E0DBD2',
+            }}
+            className="services-grid"
+          >
+            {services.map((s) => (
+              <div key={s.area} style={{ padding: '2.5rem', background: '#F8F4ED' }}>
+                <h3
+                  className="font-display"
+                  style={{ fontSize: '1.25rem', color: '#18181A', marginBottom: '1.25rem' }}
+                >
+                  {s.area}
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0 }}>
+                  {s.items.map((item) => (
+                    <li
+                      key={item}
+                      style={{
+                        fontSize: '0.875rem',
+                        color: '#7C776F',
+                        marginBottom: '0.6rem',
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Testimonials ──────────────────────────────────── */}
+      <section style={{ padding: '6rem 2rem', background: '#18181A' }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+          <p className="eyebrow" style={{ marginBottom: '0.75rem', textAlign: 'center' as const, color: '#C09A5B' }}>
+            Testimonials
+          </p>
+          <h2
+            className="display-md font-display"
+            style={{ color: '#F8F4ED', textAlign: 'center' as const, marginBottom: '3.5rem' }}
+          >
+            What People Say
+          </h2>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '1.5px',
+              background: '#2C2C2E',
+            }}
+            className="testimonial-grid"
+          >
+            {testimonials.map((t, i) => (
+              <div key={i} style={{ padding: '2.5rem', background: '#18181A' }}>
+                <p
+                  style={{
+                    fontSize: '0.9375rem',
+                    color: 'rgba(248,244,237,0.75)',
+                    lineHeight: 1.75,
+                    marginBottom: '1.5rem',
+                    fontStyle: 'italic' as const,
+                  }}
+                >
+                  "{t.quote}"
+                </p>
+                <p style={{ fontSize: '0.875rem', fontWeight: 600, color: '#F8F4ED' }}>{t.name}</p>
+                <p style={{ fontSize: '0.75rem', color: '#C09A5B' }}>{t.role}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── About ─────────────────────────────────────────── */}
+      <section style={{ padding: '6rem 2rem', background: '#F8F4ED' }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '340px 1fr',
+              gap: '4rem',
+              alignItems: 'center',
+            }}
+            className="about-grid"
+          >
+            <img
+              src="/headshot-on-white.jpg"
+              alt="Disha Soni"
+              style={{ width: '100%', aspectRatio: '1/1', objectFit: 'cover', borderRadius: '4px' }}
+            />
+            <div>
+              <p className="eyebrow" style={{ marginBottom: '1rem' }}>About</p>
+              <h2 className="display-md font-display" style={{ color: '#18181A', marginBottom: '1.5rem' }}>
+                Brand strategist &amp; digital commerce expert
+              </h2>
+              <p style={{ fontSize: '1rem', color: '#7C776F', lineHeight: 1.75, marginBottom: '2.5rem', maxWidth: '560px' }}>
+                11+ years of consulting and full-time engagements across fashion, luxury home décor, jewellery, fragrance,
+                hospitality, kids' wear and organic cosmetics — spanning brand strategy, Shopify ecosystems, campaign
+                leadership, creative direction and AI-enabled marketing operations for both Indian and international brands.
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
+                {highlights.map((h) => (
+                  <div key={h.label}>
+                    <p className="font-display" style={{ fontSize: '1.75rem', color: '#C09A5B', marginBottom: '0.25rem' }}>
+                      {h.number}
+                    </p>
+                    <p style={{ fontSize: '0.8125rem', color: '#18181A', fontWeight: 500 }}>{h.label}</p>
+                    <p style={{ fontSize: '0.75rem', color: '#A09A92' }}>{h.sub}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section
         style={{
@@ -715,11 +936,16 @@ export default function Work() {
   @media (max-width: 1023px) {
     .case-grid { grid-template-columns: 1fr !important; }
     .video-grid { grid-template-columns: repeat(3,1fr) !important; }
+    .services-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .testimonial-grid { grid-template-columns: 1fr !important; }
+    .about-grid { grid-template-columns: 1fr !important; }
+    .about-grid img { max-width: 280px; margin: 0 auto; }
   }
   @media (max-width: 767px) {
     .detail-grid { grid-template-columns: 1fr !important; }
     .static-grid { grid-template-columns: repeat(2,1fr) !important; }
     .video-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .services-grid { grid-template-columns: 1fr !important; }
   }
 `}</style>
     </div>
