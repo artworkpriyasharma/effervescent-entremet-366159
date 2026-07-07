@@ -174,16 +174,18 @@ const caseStudies = [
 // 2) set its "src" below to '/logos/your-file-name.png'
 // Leaving "src" empty shows the brand name as text instead — so this
 // works right now and you can fill in images one at a time whenever ready.
-const clientLogos: { name: string; src?: string }[] = [
-  { name: 'Zest Mélange', src: '' },
-  { name: 'Baaya Design', src: '' },
-  { name: 'Armaf', src: '' },
-  { name: 'Saturday Club', src: '' },
-  { name: 'Zest Corporation', src: '' },
-  { name: 'Ancora Design', src: '' },
-  { name: 'A Toddler Thing', src: '' },
-  { name: 'Saffron Stays', src: '' },
-  { name: 'Azafran', src: '' },
+// To make a logo clickable, add "url" with the client's website (include https://).
+// Leaving "url" empty just shows the logo without a link.
+const clientLogos: { name: string; src?: string; url?: string }[] = [
+  { name: 'Zest Mélange', src: '/logos/zestmelange-logo.png', url: '' },
+  { name: 'Baaya Design', src: '/logos/baayadesign-logo.png', url: '' },
+  { name: 'Armaf', src: '/logos/armaf-logo.png', url: '' },
+  { name: 'Saturday Club', src: '/logos/saturday-club-logo.png', url: '' },
+  { name: 'Zest Corporation', src: '/logos/zestcorporation-logo.png', url: '' },
+  { name: 'Ancora Design', src: '/logos/ancora-logo.png', url: '' },
+  { name: 'A Toddler Thing', src: '/logos/atoddlerthing-logo.png', url: '' },
+  { name: 'Saffron Stays', src: '/logos/saffronstays-logo.png', url: '' },
+  { name: 'Azafran', src: '/logos/azafran-logo.png', url: '' },
 ]
 
 const services = [
@@ -193,18 +195,49 @@ const services = [
   { area: 'Leadership', items: ['Founder Collaboration', 'Cross-functional Teams', 'Marketing Calendar', 'Stakeholder Management'] },
 ]
 
-// TESTIMONIAL PLACEHOLDERS — replace quote/name/role with real client testimonials.
 const testimonials = [
-  { quote: 'Add a testimonial quote here from a client or colleague describing the impact of your work.', name: 'Client Name', role: 'Role · Brand' },
-  { quote: 'Add a testimonial quote here from a client or colleague describing the impact of your work.', name: 'Client Name', role: 'Role · Brand' },
-  { quote: 'Add a testimonial quote here from a client or colleague describing the impact of your work.', name: 'Client Name', role: 'Role · Brand' },
+  {
+    quote: 'Disha was an absolute pleasure to work with during our rebranding journey. She quickly understood our vision and brought fresh strategic thinking that helped shape the brand direction. She is proactive, creative, dependable, and always willing to go the extra mile. Her ability to combine marketing strategy with execution made her a valuable part of the project, and we would happily recommend her to any brand looking for a thoughtful marketing professional.',
+    name: 'Sanaya',
+    role: 'The Saturday Club',
+  },
+  {
+    quote: 'Working with Disha was a wonderful experience. She played an important role in strengthening our website and refining our brand communication. She understood our audience well, was highly responsive, and consistently brought thoughtful ideas to the table. Disha is professional, detail-oriented, and genuinely invested in delivering quality work. We truly enjoyed working with her and would gladly recommend her.',
+    name: 'Swathi',
+    role: 'A Toddler Thing',
+  },
+  {
+    quote: 'Disha has been associated with Baaya Design for quite some time, first as a full-time team member and later as a consultant. Throughout this journey, she has consistently demonstrated professionalism, creativity, and a deep understanding of our brand. She has been reliable, proactive, and a pleasure to work with, contributing meaningfully across digital marketing and brand communication. We have always appreciated her commitment, strategic thinking, and positive attitude, and we wholeheartedly recommend her to anyone looking for an experienced and dependable marketing professional.',
+    name: 'Shibani',
+    role: 'Baaya Design',
+  },
 ]
 
 const mediaGallery = {
-  // Static images: square (1:1). Videos: vertical (9:16). Aim for ~20 assets total
-  // (5–6 statics, remaining as videos) once you upload real files.
-  videos: [] as { title: string; src: string; thumbnail: string; brand: string }[],
-  statics: [] as { title: string; src: string; brand: string; type: string }[],
+  videos: [
+    { title: 'Campaign Video', src: '/gallery/armaf-video-1.mp4', thumbnail: '', brand: 'Armaf' },
+    { title: 'Campaign Video', src: '/gallery/armaf-video-2.mp4', thumbnail: '', brand: 'Armaf' },
+    { title: 'Campaign Video', src: '/gallery/armaf-video-3.mp4', thumbnail: '', brand: 'Armaf' },
+    { title: 'Campaign Video', src: '/gallery/atoddlerthing-video-1.mp4', thumbnail: '', brand: 'A Toddler Thing' },
+    { title: 'Campaign Video', src: '/gallery/baayadesign-video-1.mp4', thumbnail: '', brand: 'Baaya Design' },
+    { title: 'Campaign Video', src: '/gallery/baayadesign-video-2.mp4', thumbnail: '', brand: 'Baaya Design' },
+    { title: 'Campaign Video', src: '/gallery/thesaturdayclub-video-1.mp4', thumbnail: '', brand: 'Saturday Club' },
+    { title: 'Campaign Video', src: '/gallery/zestcorporation-video-1.mp4', thumbnail: '', brand: 'Zest Corporation' },
+    { title: 'Campaign Video', src: '/gallery/zestmelange-video-1.mp4', thumbnail: '', brand: 'Zest Mélange' },
+    { title: 'Campaign Video', src: '/gallery/zestmelange-video-2.mp4', thumbnail: '', brand: 'Zest Mélange' },
+  ],
+  statics: [
+    { title: 'Campaign Creative', src: '/gallery/armaf-static-1.png', brand: 'Armaf', type: 'Static' },
+    { title: 'Campaign Creative', src: '/gallery/thesaturdayclub-static-1.png', brand: 'Saturday Club', type: 'Static' },
+    { title: 'Campaign Creative', src: '/gallery/ancoradesign-static-1.png', brand: 'Ancora Design', type: 'Static' },
+    { title: 'Campaign Creative', src: '/gallery/ancoradesign-static-2.png', brand: 'Ancora Design', type: 'Static' },
+    { title: 'Campaign Creative', src: '/gallery/zestmelange-static-1.png', brand: 'Zest Mélange', type: 'Static' },
+    { title: 'Campaign Creative', src: '/gallery/zestmelange-static-2.png', brand: 'Zest Mélange', type: 'Static' },
+    { title: 'Campaign Creative', src: '/gallery/atoddlerthing-static-1.png', brand: 'A Toddler Thing', type: 'Static' },
+    { title: 'Campaign Creative', src: '/gallery/saffronstays-static-1.jpeg', brand: 'Saffron Stays', type: 'Static' },
+    { title: 'Campaign Creative', src: '/gallery/zestcorporation-static-1.png', brand: 'Zest Corporation', type: 'Static' },
+    { title: 'Campaign Creative', src: '/gallery/baayadesign-static-1.png', brand: 'Baaya Design', type: 'Static' },
+  ],
 }
 
 export default function Work() {
@@ -508,43 +541,60 @@ export default function Work() {
               gap: '2.5rem 3.5rem',
             }}
           >
-            {clientLogos.map((logo) => (
-              <div
-                key={logo.name}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  height: '48px',
-                }}
-              >
-                {logo.src ? (
-                  <img
-                    src={logo.src}
-                    alt={logo.name}
-                    style={{
-                      maxHeight: '48px',
-                      maxWidth: '140px',
-                      objectFit: 'contain',
-                      filter: 'grayscale(100%)',
-                      opacity: 0.75,
-                    }}
-                  />
-                ) : (
-                  <span
-                    className="font-display"
-                    style={{
-                      fontSize: '1.25rem',
-                      color: '#7C776F',
-                      opacity: 0.75,
-                      letterSpacing: '0.02em',
-                    }}
-                  >
-                    {logo.name}
-                  </span>
-                )}
-              </div>
-            ))}
+            {clientLogos.map((logo) => {
+              const content = logo.src ? (
+                <img
+                  src={logo.src}
+                  alt={logo.name}
+                  style={{
+                    maxHeight: '48px',
+                    maxWidth: '140px',
+                    objectFit: 'contain',
+                    filter: 'grayscale(100%)',
+                    opacity: 0.75,
+                    transition: 'opacity 0.2s ease',
+                  }}
+                  className="logo-item"
+                />
+              ) : (
+                <span
+                  className="font-display logo-item"
+                  style={{
+                    fontSize: '1.25rem',
+                    color: '#7C776F',
+                    opacity: 0.75,
+                    letterSpacing: '0.02em',
+                    transition: 'opacity 0.2s ease',
+                  }}
+                >
+                  {logo.name}
+                </span>
+              )
+
+              const wrapperStyle = {
+                display: 'flex' as const,
+                alignItems: 'center' as const,
+                justifyContent: 'center' as const,
+                height: '48px',
+              }
+
+              return logo.url ? (
+                <a
+                  key={logo.name}
+                  href={logo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${logo.name} website`}
+                  style={{ ...wrapperStyle, textDecoration: 'none' }}
+                >
+                  {content}
+                </a>
+              ) : (
+                <div key={logo.name} style={wrapperStyle}>
+                  {content}
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -607,10 +657,24 @@ export default function Work() {
   className="video-grid"
 >
   {mediaGallery.videos.map((video) => (
-    <div key={video.title} className="media-card" style={{ aspectRatio: '9/16' }}>
+    <div
+      key={video.src}
+      className="media-card"
+      style={{ aspectRatio: '9/16', cursor: 'pointer' }}
+      onClick={(e) => {
+        const vid = e.currentTarget.querySelector('video') as HTMLVideoElement
+        if (vid.paused) {
+          vid.play()
+        } else {
+          vid.pause()
+        }
+      }}
+    >
                     <video
                       src={video.src}
-                      poster={video.thumbnail}
+                      poster={video.thumbnail || undefined}
+                      playsInline
+                      preload="metadata"
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                     <div className="media-overlay">
@@ -710,7 +774,7 @@ export default function Work() {
               >
                 {mediaGallery.statics.map((item) => (
                   <div
-                    key={item.title}
+                    key={item.src}
                     className="media-card"
                     style={{ aspectRatio: '1/1' }}
                   >
@@ -909,6 +973,8 @@ export default function Work() {
       </section>
 
       <style>{`
+  a:has(.logo-item):hover .logo-item { opacity: 1 !important; }
+
   @media (max-width: 1023px) {
     .case-grid { grid-template-columns: 1fr !important; }
     .video-grid { grid-template-columns: repeat(3,1fr) !important; }
