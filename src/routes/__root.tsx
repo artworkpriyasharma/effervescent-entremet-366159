@@ -49,25 +49,28 @@ function Nav() {
           alignItems: 'center',
           justifyContent: 'space-between',
         }}
+        className="nav-container"
       >
         {/* Logo */}
         <Link
           to="/"
           style={{ textDecoration: 'none' }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }} className="brand-block">
             <span
-              className="font-display"
+              className="font-display brand-name"
               style={{
                 fontSize: '1.375rem',
                 fontWeight: 500,
                 color: '#18181A',
                 letterSpacing: '0.01em',
+                whiteSpace: 'nowrap' as const,
               }}
             >
               Disha Soni
             </span>
             <span
+              className="brand-divider"
               style={{
                 width: '1px',
                 height: '18px',
@@ -76,12 +79,14 @@ function Nav() {
               }}
             />
             <span
+              className="brand-subtitle"
               style={{
                 fontSize: '0.6875rem',
                 fontWeight: 500,
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
                 color: '#7C776F',
+                whiteSpace: 'nowrap' as const,
               }}
             >
               Brand Strategist
@@ -159,7 +164,15 @@ function Nav() {
         }
         @media (max-width: 767px) {
           .hidden-mobile { display: none !important; }
-          .show-mobile { display: flex !important; }
+          .show-mobile { display: flex !important; gap: 1rem !important; }
+          .nav-container { padding: 0 1.25rem !important; }
+        }
+        @media (max-width: 480px) {
+          .nav-container { padding: 0 1rem !important; }
+          .brand-subtitle, .brand-divider { display: none !important; }
+          .brand-name { font-size: 1.125rem !important; }
+          .show-mobile { gap: 0.75rem !important; }
+          .show-mobile .nav-link { font-size: 0.625rem !important; }
         }
       `}</style>
     </header>

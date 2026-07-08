@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export const Route = createFileRoute('/work')({
   component: Work,
@@ -240,6 +240,78 @@ const mediaGallery = {
   ],
 }
 
+// Only loads/downloads a video's source once its card actually scrolls into
+// view, instead of every video on the page trying to fetch at once.
+function LazyVideoCard({ video }: { video: { title: string; src: string; thumbnail: string; brand: string } }) {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [inView, setInView] = useState(false)
+
+  useEffect(() => {
+    const el = containerRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setInView(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '200px' } // start loading a bit before it's actually visible
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <div
+      ref={containerRef}
+      className="media-card"
+      style={{ aspectRatio: '9/16', cursor: 'pointer', background: '#0F0F10' }}
+      onClick={(e) => {
+        const vid = e.currentTarget.querySelector('video') as HTMLVideoElement | null
+        if (!vid) return
+        if (vid.paused) {
+          vid.play()
+        } else {
+          vid.pause()
+        }
+      }}
+    >
+      {inView && (
+        <video
+          src={video.src}
+          poster={video.thumbnail || undefined}
+          playsInline
+          preload="metadata"
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        />
+      )}
+      <div className="media-overlay">
+        <div className="play-btn">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M6 4L16 10L6 16V4Z" fill="#18181A" />
+          </svg>
+        </div>
+      </div>
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          padding: '1.5rem 1.25rem 1rem',
+          background: 'linear-gradient(to top, rgba(24,24,26,0.9), transparent)',
+        }}
+      >
+        <p style={{ fontSize: '0.625rem', color: '#C09A5B', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>
+          {video.brand}
+        </p>
+        <p style={{ fontSize: '0.875rem', color: '#F8F4ED' }}>{video.title}</p>
+      </div>
+    </div>
+  )
+}
+
 export default function Work() {
   const [activeStudy, setActiveStudy] = useState(caseStudies[0].id)
   const active = caseStudies.find((c) => c.id === activeStudy)!
@@ -287,7 +359,7 @@ export default function Work() {
             className="case-grid"
           >
             {/* Left: Brand list */}
-            <div style={{ position: 'sticky', top: '90px' }}>
+            <div className="case-list-sticky">
               <p
                 style={{
                   fontSize: '0.625rem',
@@ -546,6 +618,8 @@ export default function Work() {
                 <img
                   src={logo.src}
                   alt={logo.name}
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     maxHeight: '48px',
                     maxWidth: '140px',
@@ -657,52 +731,8 @@ export default function Work() {
   className="video-grid"
 >
   {mediaGallery.videos.map((video) => (
-    <div
-      key={video.src}
-      className="media-card"
-      style={{ aspectRatio: '9/16', cursor: 'pointer' }}
-      onClick={(e) => {
-        const vid = e.currentTarget.querySelector('video') as HTMLVideoElement
-        if (vid.paused) {
-          vid.play()
-        } else {
-          vid.pause()
-        }
-      }}
-    >
-                    <video
-                      src={video.src}
-                      poster={video.thumbnail || undefined}
-                      playsInline
-                      preload="metadata"
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                    <div className="media-overlay">
-                      <div className="play-btn">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                          <path d="M6 4L16 10L6 16V4Z" fill="#18181A" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div
-                      style={{
-                        position: 'absolute',
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        padding: '1.5rem 1.25rem 1rem',
-                        background: 'linear-gradient(to top, rgba(24,24,26,0.9), transparent)',
-                      }}
-                    >
-                      <p style={{ fontSize: '0.625rem', color: '#C09A5B', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>
-                        {video.brand}
-                      </p>
-                      <p style={{ fontSize: '0.875rem', color: '#F8F4ED', fontWeight: 500 }}>
-                        {video.title}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+    <LazyVideoCard key={video.src} video={video} />
+  ))}
               </div>
             ) : (
               <div
@@ -781,6 +811,8 @@ export default function Work() {
                     <img
                       src={item.src}
                       alt={item.title}
+                      loading="lazy"
+                      decoding="async"
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                     <div className="media-overlay">
@@ -975,8 +1007,11 @@ export default function Work() {
       <style>{`
   a:has(.logo-item):hover .logo-item { opacity: 1 !important; }
 
+  .case-list-sticky { position: sticky; top: 90px; }
+
   @media (max-width: 1023px) {
     .case-grid { grid-template-columns: 1fr !important; }
+    .case-list-sticky { position: static !important; top: auto !important; margin-bottom: 2rem; }
     .video-grid { grid-template-columns: repeat(3,1fr) !important; }
     .services-grid { grid-template-columns: repeat(2,1fr) !important; }
     .testimonial-grid { grid-template-columns: 1fr !important; }

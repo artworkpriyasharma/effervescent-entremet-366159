@@ -394,7 +394,7 @@ export default function Resume() {
           </div>
 
           {/* Right: Sidebar */}
-          <div style={{ position: 'sticky', top: '90px' }}>
+          <div className="resume-sticky">
             {/* Education */}
             <section style={{ marginBottom: '3rem' }}>
               <div
@@ -576,8 +576,10 @@ export default function Resume() {
       </div>
 
       <style>{`
+        .resume-sticky { position: sticky; top: 90px; }
         @media (max-width: 1023px) {
           .resume-grid { grid-template-columns: 1fr !important; }
+          .resume-sticky { position: static !important; top: auto !important; margin-top: 2rem; }
         }
       `}</style>
     </div>
