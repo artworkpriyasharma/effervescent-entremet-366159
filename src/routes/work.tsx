@@ -215,16 +215,16 @@ const testimonials = [
 
 const mediaGallery = {
   videos: [
-    { title: 'Campaign Video', src: '/gallery/armaf-video-1.mp4', thumbnail: '', brand: 'Armaf' },
-    { title: 'Campaign Video', src: '/gallery/armaf-video-2.mp4', thumbnail: '', brand: 'Armaf' },
-    { title: 'Campaign Video', src: '/gallery/armaf-video-3.mp4', thumbnail: '', brand: 'Armaf' },
-    { title: 'Campaign Video', src: '/gallery/atoddlerthing-video-1.mp4', thumbnail: '', brand: 'A Toddler Thing' },
-    { title: 'Campaign Video', src: '/gallery/baayadesign-video-1.mp4', thumbnail: '', brand: 'Baaya Design' },
-    { title: 'Campaign Video', src: '/gallery/baayadesign-video-2.mp4', thumbnail: '', brand: 'Baaya Design' },
-    { title: 'Campaign Video', src: '/gallery/thesaturdayclub-video-1.mp4', thumbnail: '', brand: 'Saturday Club' },
-    { title: 'Campaign Video', src: '/gallery/zestcorporation-video-1.mp4', thumbnail: '', brand: 'Zest Corporation' },
-    { title: 'Campaign Video', src: '/gallery/zestmelange-video-1.mp4', thumbnail: '', brand: 'Zest Mélange' },
-    { title: 'Campaign Video', src: '/gallery/zestmelange-video-2.mp4', thumbnail: '', brand: 'Zest Mélange' },
+    { title: 'Campaign Video', src: '/gallery/armaf-video-1.mp4', thumbnail: '/gallery/thumbs/armaf-video-1-thumb.jpg', brand: 'Armaf' },
+    { title: 'Campaign Video', src: '/gallery/armaf-video-2.mp4', thumbnail: '/gallery/thumbs/armaf-video-2-thumb.jpg', brand: 'Armaf' },
+    { title: 'Campaign Video', src: '/gallery/armaf-video-3.mp4', thumbnail: '/gallery/thumbs/armaf-video-3-thumb.jpg', brand: 'Armaf' },
+    { title: 'Campaign Video', src: '/gallery/atoddlerthing-video-1.mp4', thumbnail: '/gallery/thumbs/atoddlerthing-video-1-thumb.jpg', brand: 'A Toddler Thing' },
+    { title: 'Campaign Video', src: '/gallery/baayadesign-video-1.mp4', thumbnail: '/gallery/thumbs/baayadesign-video-1-thumb.jpg', brand: 'Baaya Design' },
+    { title: 'Campaign Video', src: '/gallery/baayadesign-video-2.mp4', thumbnail: '/gallery/thumbs/baayadesign-video-2-thumb.jpg', brand: 'Baaya Design' },
+    { title: 'Campaign Video', src: '/gallery/thesaturdayclub-video-1.mp4', thumbnail: '/gallery/thumbs/thesaturdayclub-video-1-thumb.jpg', brand: 'Saturday Club' },
+    { title: 'Campaign Video', src: '/gallery/zestcorporation-video-1.mp4', thumbnail: '/gallery/thumbs/zestcorporation-video-1-thumb.jpg', brand: 'Zest Corporation' },
+    { title: 'Campaign Video', src: '/gallery/zestmelange-video-1.mp4', thumbnail: '/gallery/thumbs/zestmelange-video-1-thumb.jpg', brand: 'Zest Mélange' },
+    { title: 'Campaign Video', src: '/gallery/zestmelange-video-2.mp4', thumbnail: '/gallery/thumbs/zestmelange-video-2-thumb.jpg', brand: 'Zest Mélange' },
   ],
   statics: [
     { title: 'Campaign Creative', src: '/gallery/armaf-static-1.png', brand: 'Armaf', type: 'Static' },
@@ -724,7 +724,7 @@ export default function Work() {
               <div
   style={{
     display: 'grid',
-    gridTemplateColumns: 'repeat(4, 1fr)',
+    gridTemplateColumns: 'repeat(2, 1fr)',
     gap: '1.5px',
     background: '#2C2C2E',
   }}
@@ -796,7 +796,7 @@ export default function Work() {
               <div
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: 'repeat(4, 1fr)',
+                  gridTemplateColumns: 'repeat(2, 1fr)',
                   gap: '1.5px',
                   background: '#2C2C2E',
                 }}
@@ -1012,15 +1012,16 @@ export default function Work() {
   @media (max-width: 1023px) {
     .case-grid { grid-template-columns: 1fr !important; }
     .case-list-sticky { position: static !important; top: auto !important; margin-bottom: 2rem; }
-    .video-grid { grid-template-columns: repeat(3,1fr) !important; }
     .services-grid { grid-template-columns: repeat(2,1fr) !important; }
     .testimonial-grid { grid-template-columns: 1fr !important; }
   }
   @media (max-width: 767px) {
     .detail-grid { grid-template-columns: 1fr !important; }
-    .static-grid { grid-template-columns: repeat(2,1fr) !important; }
-    .video-grid { grid-template-columns: repeat(2,1fr) !important; }
     .services-grid { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 420px) {
+    .static-grid { grid-template-columns: 1fr !important; }
+    .video-grid { grid-template-columns: 1fr !important; }
   }
 `}</style>
     </div>
