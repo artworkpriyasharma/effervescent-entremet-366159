@@ -13,7 +13,7 @@ const caseStudies = [
     services: ['Shopify Ecosystem', 'Merchandising', 'Campaign Leadership', 'SEO', 'Website Optimisation'],
     period: 'Aug 2022 – Present',
     overview:
-      'Full ownership of a large-scale S2hopify ecosystem supporting a fashion and lifestyle D2C brand, managing SKUs and driving visitors through strategic merchandising, SEO, and seasonal campaign execution.',
+      'Full ownership of a large-scale Shopify ecosystem supporting a fashion and lifestyle D2C brand, managing SKUs and driving visitors through strategic merchandising, SEO, and seasonal campaign execution.',
     deliverables: [
       'End-to-end Shopify ecosystem management with 500+ SKUs',
       'Seasonal campaign planning and execution (3+ per year)',
