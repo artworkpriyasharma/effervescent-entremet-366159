@@ -243,8 +243,9 @@ export default function Resume() {
             </section>
 
             {/* Experience */}
-            <section className="reveal">
+            <section>
               <div
+                className="reveal"
                 style={{
                   display: 'flex',
                   alignItems: 'center',

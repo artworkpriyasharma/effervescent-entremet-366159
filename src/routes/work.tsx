@@ -349,7 +349,7 @@ export default function Work() {
 
       {/* Case Studies — Tab Interface */}
       <section style={{ padding: '5rem 2rem' }}>
-        <div className="reveal" style={{ maxWidth: '1280px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <div
             style={{
               display: 'grid',
@@ -681,8 +681,9 @@ export default function Work() {
           background: '#18181A',
         }}
       >
-        <div className="reveal" style={{ maxWidth: '1280px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <div
+            className="reveal"
             style={{
               display: 'flex',
               justifyContent: 'space-between',
@@ -884,16 +885,18 @@ export default function Work() {
 
       {/* ── Services ──────────────────────────────────────── */}
       <section style={{ padding: '6rem 2rem', background: '#F8F4ED' }}>
-        <div className="reveal" style={{ maxWidth: '1280px', margin: '0 auto' }}>
-          <p className="eyebrow" style={{ marginBottom: '0.75rem', textAlign: 'center' as const }}>
-            Services
-          </p>
-          <h2
-            className="display-md font-display"
-            style={{ color: '#18181A', textAlign: 'center' as const, marginBottom: '3.5rem' }}
-          >
-            What I Do
-          </h2>
+        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+          <div className="reveal">
+            <p className="eyebrow" style={{ marginBottom: '0.75rem', textAlign: 'center' as const }}>
+              Services
+            </p>
+            <h2
+              className="display-md font-display"
+              style={{ color: '#18181A', textAlign: 'center' as const, marginBottom: '3.5rem' }}
+            >
+              What I Do
+            </h2>
+          </div>
           <div
             style={{
               display: 'grid',
@@ -934,16 +937,18 @@ export default function Work() {
 
       {/* ── Testimonials ──────────────────────────────────── */}
       <section style={{ padding: '6rem 2rem', background: '#18181A' }}>
-        <div className="reveal" style={{ maxWidth: '1280px', margin: '0 auto' }}>
-          <p className="eyebrow" style={{ marginBottom: '0.75rem', textAlign: 'center' as const, color: '#C09A5B' }}>
-            Testimonials
-          </p>
-          <h2
-            className="display-md font-display"
-            style={{ color: '#F8F4ED', textAlign: 'center' as const, marginBottom: '3.5rem' }}
-          >
-            What People Say
-          </h2>
+        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+          <div className="reveal">
+            <p className="eyebrow" style={{ marginBottom: '0.75rem', textAlign: 'center' as const, color: '#C09A5B' }}>
+              Testimonials
+            </p>
+            <h2
+              className="display-md font-display"
+              style={{ color: '#F8F4ED', textAlign: 'center' as const, marginBottom: '3.5rem' }}
+            >
+              What People Say
+            </h2>
+          </div>
           <div
             style={{
               display: 'grid',
