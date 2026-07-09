@@ -106,7 +106,7 @@ export default function Contact() {
             gap: '6rem',
             alignItems: 'start',
           }}
-          className="contact-grid"
+          className="contact-grid reveal"
         >
           {/* Left: Info */}
           <div>

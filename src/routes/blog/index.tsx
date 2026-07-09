@@ -37,7 +37,7 @@ function BlogIndex() {
               gap: '1.5px',
               background: '#E0DBD2',
             }}
-            className="blog-grid"
+            className="blog-grid reveal"
           >
             {posts.map((post) => (
               <Link

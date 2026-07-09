@@ -85,7 +85,7 @@ function BlogPost() {
       </section>
 
       <section style={{ padding: '5rem 2rem' }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+        <div className="reveal" style={{ maxWidth: '800px', margin: '0 auto' }}>
           <p
             style={{
               fontSize: '1.125rem',

@@ -9,6 +9,8 @@ const highlights = [
   { number: '50K+', label: 'SKUs Managed', sub: 'Shopify Ecosystems' },
   { number: '700K', label: 'Daily Visitors', sub: 'Peak Platform Traffic' },
   { number: 'Multiple Seasonal', label: 'Brand Engagements', sub: 'Consulting & Full-Time' },
+  { number: '12-15', label: 'Team Members Led', sub: 'Cross-functional Teams' },
+  { number: '25+', label: 'Customer Journeys Optimised', sub: 'UX, Messaging & Funnel Gaps' },
 ]
 
 const featuredWork = [
@@ -135,6 +137,20 @@ export default function Home() {
           />
 
           <p
+            className="anim-fade-up anim-delay-3"
+            style={{
+              maxWidth: '580px',
+              fontSize: 'clamp(1.0625rem, 1.9vw, 1.25rem)',
+              color: '#C09A5B',
+              fontStyle: 'italic' as const,
+              lineHeight: 1.6,
+              marginBottom: '1.5rem',
+            }}
+          >
+            I turn gaps into actionable insight — spotting what isn't working and building the fix, from strategy through execution.
+          </p>
+
+          <p
   className="anim-fade-up anim-delay-3"
   style={{
     maxWidth: '580px',
@@ -218,6 +234,74 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── How I Work ────────────────────────────────── */}
+      <section style={{ padding: '6rem 2rem', background: '#F8F4ED' }}>
+        <div className="reveal" style={{ maxWidth: '1280px', margin: '0 auto' }}>
+          <p className="eyebrow" style={{ marginBottom: '0.75rem' }}>How I Work</p>
+          <h2
+            className="display-md font-display"
+            style={{ color: '#18181A', marginBottom: '4rem', maxWidth: '560px' }}
+          >
+            Turning gaps into growth
+          </h2>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '2px',
+              background: '#E0DBD2',
+            }}
+            className="approach-grid"
+          >
+            {[
+              {
+                step: '01',
+                title: 'Spot the Gap',
+                desc: 'I look past the obvious metrics to find where a brand\u2019s story, system, or customer journey is quietly breaking down.',
+              },
+              {
+                step: '02',
+                title: 'Shape the Insight',
+                desc: 'Every gap becomes a clear, actionable point of view \u2014 grounded in what\u2019s actually happening, not guesswork.',
+              },
+              {
+                step: '03',
+                title: 'Drive the Action',
+                desc: 'From strategy to execution, I stay hands-on until the fix is live, measurable, and owned by the team.',
+              },
+            ].map((item) => (
+              <div key={item.step} style={{ background: '#F8F4ED', padding: '2.5rem 2rem' }}>
+                <p
+                  className="font-display"
+                  style={{ fontSize: '1.5rem', color: '#C09A5B', marginBottom: '1.25rem' }}
+                >
+                  {item.step}
+                </p>
+                <h3
+                  style={{
+                    fontSize: '1.0625rem',
+                    fontWeight: 600,
+                    color: '#18181A',
+                    marginBottom: '0.85rem',
+                  }}
+                >
+                  {item.title}
+                </h3>
+                <p style={{ fontSize: '0.875rem', color: '#7C776F', lineHeight: 1.7 }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <style>{`
+          @media (max-width: 767px) {
+            .approach-grid { grid-template-columns: 1fr !important; }
+          }
+        `}</style>
+      </section>
+
       {/* ── Stats ──────────────────────────────────────── */}
       <section style={{ background: '#F0EBE0', borderBottom: '1px solid #E0DBD2' }}>
         <div
@@ -226,16 +310,17 @@ export default function Home() {
             margin: '0 auto',
             padding: '0 2rem',
             display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
+            gridTemplateColumns: 'repeat(3, 1fr)',
           }}
-          className="stats-grid"
+          className="stats-grid reveal"
         >
           {highlights.map((stat, i) => (
             <div
               key={stat.number}
               style={{
                 padding: '2.5rem 2rem',
-                borderRight: i < highlights.length - 1 ? '1px solid #E0DBD2' : 'none',
+                borderRight: (i + 1) % 3 !== 0 ? '1px solid #E0DBD2' : 'none',
+                borderBottom: i < 3 ? '1px solid #E0DBD2' : 'none',
               }}
               className="stat-item"
             >
@@ -268,7 +353,7 @@ export default function Home() {
 
       {/* ── Featured Work ────────────────────────────── */}
       <section style={{ padding: '7rem 2rem' }}>
-        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+        <div className="reveal" style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <div
             style={{
               display: 'flex',
@@ -370,7 +455,7 @@ export default function Home() {
             pointerEvents: 'none',
           }}
         />
-        <div style={{ maxWidth: '1280px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+        <div className="reveal" style={{ maxWidth: '1280px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <p className="eyebrow" style={{ marginBottom: '0.75rem' }}>Expertise</p>
           <h2
             className="display-md font-display"
@@ -461,6 +546,7 @@ export default function Home() {
       {/* ── Industries ────────────────────────────── */}
       <section style={{ padding: '5rem 2rem', borderBottom: '1px solid #E0DBD2' }}>
         <div
+          className="reveal"
           style={{
             maxWidth: '1280px',
             margin: '0 auto',
@@ -535,7 +621,7 @@ export default function Home() {
             gap: '6rem',
             alignItems: 'center',
           }}
-          className="profile-grid"
+          className="profile-grid reveal"
         >
           <div>
             <p className="eyebrow" style={{ marginBottom: '0.75rem' }}>Executive Profile</p>
@@ -612,6 +698,7 @@ export default function Home() {
 
       {/* ── CTA Banner ──────────────────────────── */}
       <section
+        className="reveal"
         style={{
           background: '#C09A5B',
           padding: '5rem 2rem',

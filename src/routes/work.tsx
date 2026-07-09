@@ -10,13 +10,14 @@ const caseStudies = [
     id: 'zest-melange',
     brand: 'Zest Mélange',
     category: 'Fashion & Lifestyle',
-    services: ['Shopify Ecosystem', 'Merchandising', 'Campaign Leadership', 'SEO', 'Website Optimisation'],
+    services: ['Shopify Ecosystem', 'Merchandising', 'Campaign Leadership', 'Loyalty Program', 'SEO', 'Website Optimisation'],
     period: 'Aug 2022 – Present',
     overview:
       'Full ownership of a large-scale Shopify ecosystem supporting a fashion and lifestyle D2C brand, managing SKUs and driving visitors through strategic merchandising, SEO, and seasonal campaign execution.',
     deliverables: [
       'End-to-end Shopify ecosystem management with 500+ SKUs',
       'Seasonal campaign planning and execution (3+ per year)',
+      'Designed and launched a customer loyalty/membership program to drive repeat purchase and retention',
       'Google Merchant Center coordination and product feed management',
       'SEO strategy and website optimisation for organic growth',
       'Cross-functional collaboration with designers and developers',
@@ -348,7 +349,7 @@ export default function Work() {
 
       {/* Case Studies — Tab Interface */}
       <section style={{ padding: '5rem 2rem' }}>
-        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+        <div className="reveal" style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <div
             style={{
               display: 'grid',
@@ -591,7 +592,7 @@ export default function Work() {
           borderBottom: '1px solid #E0DBD2',
         }}
       >
-        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+        <div className="reveal" style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <p
             style={{
               fontSize: '0.625rem',
@@ -680,7 +681,7 @@ export default function Work() {
           background: '#18181A',
         }}
       >
-        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+        <div className="reveal" style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <div
             style={{
               display: 'flex',
@@ -883,7 +884,7 @@ export default function Work() {
 
       {/* ── Services ──────────────────────────────────────── */}
       <section style={{ padding: '6rem 2rem', background: '#F8F4ED' }}>
-        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+        <div className="reveal" style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <p className="eyebrow" style={{ marginBottom: '0.75rem', textAlign: 'center' as const }}>
             Services
           </p>
@@ -933,7 +934,7 @@ export default function Work() {
 
       {/* ── Testimonials ──────────────────────────────────── */}
       <section style={{ padding: '6rem 2rem', background: '#18181A' }}>
-        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+        <div className="reveal" style={{ maxWidth: '1280px', margin: '0 auto' }}>
           <p className="eyebrow" style={{ marginBottom: '0.75rem', textAlign: 'center' as const, color: '#C09A5B' }}>
             Testimonials
           </p>
@@ -975,6 +976,7 @@ export default function Work() {
 
       {/* CTA */}
       <section
+        className="reveal"
         style={{
           padding: '5rem 2rem',
           textAlign: 'center' as const,

@@ -176,7 +176,7 @@ export default function Resume() {
           {/* Left: Experience */}
           <div>
             {/* Career highlights banner */}
-            <section style={{ marginBottom: '5rem' }}>
+            <section className="reveal" style={{ marginBottom: '5rem' }}>
               <div
                 style={{
                   display: 'flex',
@@ -243,7 +243,7 @@ export default function Resume() {
             </section>
 
             {/* Experience */}
-            <section>
+            <section className="reveal">
               <div
                 style={{
                   display: 'flex',
@@ -396,7 +396,7 @@ export default function Resume() {
           {/* Right: Sidebar */}
           <div className="resume-sticky">
             {/* Education */}
-            <section style={{ marginBottom: '3rem' }}>
+            <section className="reveal" style={{ marginBottom: '3rem' }}>
               <div
                 style={{
                   display: 'flex',
@@ -439,7 +439,7 @@ export default function Resume() {
             </section>
 
             {/* Tools */}
-            <section style={{ marginBottom: '3rem' }}>
+            <section className="reveal" style={{ marginBottom: '3rem' }}>
               <div
                 style={{
                   display: 'flex',
@@ -490,7 +490,7 @@ export default function Resume() {
             </section>
 
             {/* Core Skills */}
-            <section style={{ marginBottom: '3rem' }}>
+            <section className="reveal" style={{ marginBottom: '3rem' }}>
               <div
                 style={{
                   display: 'flex',

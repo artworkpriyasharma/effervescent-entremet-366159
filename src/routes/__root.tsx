@@ -1,4 +1,5 @@
 import { HeadContent, Scripts, createRootRoute, Link, useRouterState } from '@tanstack/react-router'
+import { useEffect } from 'react'
 import '../styles.css'
 
 export const Route = createRootRoute({
@@ -339,6 +340,33 @@ function WhatsAppButton() {
   )
 }
 function RootDocument({ children }: { children: React.ReactNode }) {
+  const path = useRouterState({ select: (s) => s.location.pathname })
+
+  useEffect(() => {
+    // Re-scan for .reveal elements on every page/route change, so newly
+    // mounted sections get the fade-up-on-scroll treatment automatically.
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+    )
+
+    const raf = requestAnimationFrame(() => {
+      document.querySelectorAll('.reveal:not(.is-visible)').forEach((el) => observer.observe(el))
+    })
+
+    return () => {
+      cancelAnimationFrame(raf)
+      observer.disconnect()
+    }
+  }, [path])
+
   return (
     <html lang="en">
       <head>
